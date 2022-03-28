@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    // 文件路径解析时，基本的url
+    "baseUrl": "./",
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    },
+    // 目标代码 ts=>es6/7/8
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    // 目标代码需要使用的模块化方案 esmodule
+    "module": "esnext",
+    // 按照node方式解析模块
+    "moduleResolution": "node",
+    // 严格模式
+    "strict": true,
+    // 对jsx进行处理
+    "jsx": "preserve",
+    "importHelpers": true,
+    // 生成映射文件
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    // export defult和module.exports能否混合使用
+    "esModuleInterop": true,
+    // 指定项目中可以使用哪些库的类型
+    "lib": ["esnext", "dom"]
+  },
+  "vueCompilerOptions": {
+    "experimentalCompatMode": 3
+  },
+  //   有哪些ts代码需要编译解析
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  // 不解析的文件。因为解析的文件可能会引用node_modules中的文件
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
