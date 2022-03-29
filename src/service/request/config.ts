@@ -15,6 +15,6 @@ if (import.meta.env.MODE === 'development') {
   BASE_URL = '/api'
 }
 if (process.env.NODE_ENV === 'production') {
-  BASE_URL = 'http://coderwhy.ort/prod'
+  BASE_URL = 'http://152.136.185.210:4000'
 }
 export { BASE_URL, TIME_OUT }
