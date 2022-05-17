@@ -2,7 +2,7 @@
   <div class="pageModal">
     <el-dialog
       v-model="dialogVisible"
-      title="新建用户"
+      :title="title"
       width="25%"
       top="20vh"
       center
@@ -42,6 +42,10 @@ const props = defineProps({
   otherInfo: {
     type: Object,
     default: () => ({})
+  },
+  title: {
+    type: String,
+    required: true
   }
 })
 watch(

@@ -21,7 +21,7 @@ axios
     }
   })
   .then((res) => {
-    console.log(res.data)
+    return res
   })
 axios
   .post('/post', {
@@ -31,7 +31,7 @@ axios
     }
   })
   .then((res) => {
-    console.log(res.data)
+    return res
   })
 
 // all，多个请求等到都请求完成再返回
@@ -41,7 +41,7 @@ axios
     axios.post('/post', { params: { name: 'pdy', age: '19' } })
   ])
   .then((res) => {
-    console.log(res)
+    return res
   })
 
 // 拦截器
@@ -59,7 +59,6 @@ axios.interceptors.request.use(
     return config
   },
   (err) => {
-    console.log('请求发生错误')
     return err
   }
 )
@@ -71,11 +70,9 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   (res) => {
-    console.log(res.data)
     return res
   },
   (err) => {
-    console.log('服务器响应失败')
     return err
   }
 )

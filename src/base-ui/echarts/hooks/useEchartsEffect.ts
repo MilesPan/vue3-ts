@@ -2,7 +2,7 @@ import * as echarts from 'echarts'
 import chinaMapData from '../data/china.json'
 echarts.registerMap('china', chinaMapData)
 export function useEchartsEffect(el: HTMLElement) {
-  const echartInstance = echarts.init(el)
+  const echartInstance = echarts.init(el, 'light')
   const setOPtions = (options: echarts.EChartsOption) => {
     echartInstance.setOption(options)
   }

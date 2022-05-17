@@ -22,6 +22,7 @@ const props = defineProps({
 
 <style scoped lang="less">
 .box-card {
+  margin-bottom: 10px;
   &:deep(.el-card__header) {
     padding: 10px 20px !important;
   }

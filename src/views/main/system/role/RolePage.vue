@@ -13,6 +13,7 @@
       @editBtnClick="handleEditData"
     ></pageContent>
     <pageModal
+      title="新建角色"
       ref="pageModalRef"
       :defaulInfo="defaultInfo"
       :modalConfig="modalConfig"
@@ -53,7 +54,7 @@ const editCallback = (item: any) => {
   // 为了确保组件已经渲染完，使用nextTick
   nextTick(() => {
     elTreeRef.value?.setCheckedKeys(leafKeys, false)
-    console.log(elTreeRef.value)
+
   })
 }
 const { handleResetClick, handleQueryClick, pageContentRef } = usePageSearch()

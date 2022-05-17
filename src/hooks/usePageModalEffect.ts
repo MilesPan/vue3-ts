@@ -20,7 +20,6 @@ export function usePageModal(newCb?: CallbackType, editCb?: CallbackType) {
     if (pageModalRef.value) {
       pageModalRef.value.dialogVisible = true
     }
-    console.log(item)
 
     // 编辑时不显示密码栏
     editCb && editCb(item)

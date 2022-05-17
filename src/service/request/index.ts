@@ -37,11 +37,8 @@ class MyRequest {
     // 所以实例都会有的拦截器，全局拦截器
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所以实例共有的拦截器：请求成功拦截')
         // 请求的时候显示loading
         if (this.showLoading) {
-          console.log(this.showLoading)
-
           this.loading = ElLoading.service({
             lock: true,
             text: '正在请求数据中',
@@ -52,14 +49,11 @@ class MyRequest {
         return config
       },
       (err) => {
-        console.log('所以实例共有的拦截器：请求失败拦截')
         return err
       }
     )
     this.instance.interceptors.response.use(
       (res) => {
-        console.log('所以实例共有的拦截器：响应成功拦截')
-
         // 响应后移除loading
         setTimeout(() => {
           this.loading?.close()
@@ -72,13 +66,9 @@ class MyRequest {
         // }
       },
       (err) => {
-        console.log('所以实例共有的拦截器：响应失败拦截')
-        console.log(err.response)
-
         if (err.response.state === 404) {
-          console.log('404 Not Found')
+          return err
         }
-        return err
       }
     )
   }

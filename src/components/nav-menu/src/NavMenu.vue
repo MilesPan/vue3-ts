@@ -19,7 +19,13 @@
             <!-- 一级菜单标题 -->
             <template #title>
               <el-icon>
-                <component :is="item.icon.split('-')[2].toLowerCase()" />
+                <component
+                  :is="
+                    item.icon === 'el-icon-chat-line-round'
+                      ? 'chat-line-square'
+                      : item.icon.split('-')[2].toLowerCase()
+                  "
+                />
               </el-icon>
               <span>{{ item.name }}</span>
             </template>

@@ -1,4 +1,3 @@
-import { defineEmits, ref } from 'vue'; import UserInfo from './UserInfo.vue';
 <template>
   <div class="navHeader">
     <el-icon class="foldMenu" @click="handleFoldClick">
@@ -13,6 +12,7 @@ import { defineEmits, ref } from 'vue'; import UserInfo from './UserInfo.vue';
 </template>
 
 <script setup lang="ts">
+import { ElDialog } from 'element-plus'
 import BreadCrumb from '@/base-ui/breadCrumb/index'
 import { useLoginStore } from '@/store'
 import { pathMapBreadcrumb } from '@/utils/mapMenus'

@@ -31,7 +31,6 @@ const router = createRouter({
 router.beforeResolve((to) => {
   // 如果不是去登录
   if (to.path !== '/login') {
-    console.log(1)
     const token = localCache.getCache('token')
     // 并且没有登录过，就让用户去登陆
     if (!token) {
@@ -39,7 +38,6 @@ router.beforeResolve((to) => {
     }
   }
   if (to.path === '/main') {
-    console.log(2)
     return firstMenu.url
   }
 })

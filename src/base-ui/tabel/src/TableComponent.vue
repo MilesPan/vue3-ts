@@ -115,18 +115,18 @@ const handleSelectionChange = (value: List) => {
   emit('selectionChange', value)
 }
 const pageConfig = reactive(props.page)
-console.log(pageConfig)
+
 
 const small = ref(false)
 const background = ref(false)
 const disabled = ref(false)
 
 const handleSizeChange = (pageSize: number) => {
-  console.log(pageSize)
+
   emit('update:page', { ...props.page, pageSize })
 }
 const handleCurrentChange = (currentPage: number) => {
-  console.log(currentPage)
+
 
   emit('update:page', { ...props.page, currentPage })
 }

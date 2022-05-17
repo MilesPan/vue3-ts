@@ -17,6 +17,7 @@
       >
       </pageContent>
       <pageModal
+        title="新建用户"
         :defaultInfo="defaultInfo"
         ref="pageModalRef"
         :modalConfig="modalConfigRef"

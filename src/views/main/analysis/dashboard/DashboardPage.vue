@@ -69,8 +69,6 @@ const categoryGoodsFavor = computed(() => {
       values.push(item.goodsFavor)
     }
   }
-  console.log(xLabels)
-
   return { xLabels, values }
 })
 const addressGoodsSale = computed(() => {

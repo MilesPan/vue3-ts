@@ -17,7 +17,7 @@
     // 严格模式
     "strict": true,
     // 对jsx进行处理
-    "jsx": "preserve",
+    // "jsx": "preserve",
     "importHelpers": true,
     // 生成映射文件
     "sourceMap": true,

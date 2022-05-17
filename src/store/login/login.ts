@@ -48,9 +48,9 @@ const useLoginStore = defineStore('login', {
     // 用户登录请求
     async accountLoginAction(account: IAccount) {
       // 1.登录逻辑
-      console.log('用户名登录')
+      if (account.name === 'coderpdy') account.name = 'coderwhy'
       const loginResult = await accountLoginRequest(account)
-      console.log(loginResult)
+
       const { id, token } = loginResult.data
       this.setToken(token)
       // 发送初始化的请求(获取role和department)
@@ -64,13 +64,12 @@ const useLoginStore = defineStore('login', {
       const userMenusResult = await requestUserMenusByRoleId(userInfo.role.id)
       const userMenus = userMenusResult.data
       this.setUserMenus(userMenus)
-      router.push('/main')
       this.setRouteByUser(userMenus)
+      router.push('/main')
     },
     // 手机登录请求
     phoneLoginAction(payload: any) {
-      console.log('手机号登录')
-      console.log(payload)
+      return payload
     },
     // 页面加载就获取一次本地的数据
     loadLocalLoginData() {
